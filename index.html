@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head><title>Two Kinds</title></head>
+<style>
+	body{
+		background-color: #2975C6;
+	}
+	
+	div.about{
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 260px;
+		border: 3px solid #ffffff;
+		padding-left:50px;
+	}
+</style>
+<script>
+	function playPerfectlyC(){
+		var img = document.getElementById('piano');
+		var mus = document.getElementById('pc');
+		img.src = "img/PerfectlyContent.gif";
+		mus.src = "mus/PerfectlyContent.wav";
+		mus.play();
+	}
+	function playPleadingC(){
+		var img = document.getElementById('piano');
+		var mus = document.getElementById('pc');
+		img.src = "img/PleadingChild.gif";
+		mus.src = "mus/PleadingChild.wav";
+		mus.play();
+	}
+	
+	var wordBank = [">Click here for the answer", "Click here for Jing-mei's answer", "Helsinki", "Nairobi"];
+	
+	function showAnswerT(){
+		if (document.getElementById("choice1").innerHTML != wordBank[2]){
+		document.getElementById("choice1").innerHTML = wordBank[2];
+		}
+	}
+	
+	function showAnswerJ(){
+		if (document.getElementById("choice2").innerHTML != wordBank[3]){
+		document.getElementById("choice2").innerHTML = wordBank[3];
+		}
+	}
+
+</script>
+<body>	
+	<h1 style="color:white">Two Kinds</h1>
+	<img id="piano" src="img/frame01.png">
+	</br>
+	<img src = "img/Pleading_Child.png" onclick="playPleadingC()" width="100" height="100"></img>
+	<img src = "img/Perfectly_Content.png" onclick="playPerfectlyC()" width="100" height="100"></button>
+	<video id="pc" controls="controls" hidden="true" loop="true">
+	  <source src="mus/PleadingChild.mp3" type="audio/mpeg">
+	</video>
+	
+	<div class="about" style="color:white">
+		<h2>High Context Culture</h2>
+		<img id="me" src="img/america.png" alt="usflag" width="200" height="100">
+		<ul class="hcc">
+			<li>Individualistic</li>
+			<li>Confrontational</li>
+			<li>Self-responsibility</li>
+			<li>Jing-mei</li>
+		</ul>
+		<h2 style="color:white">Low Context Culture</h1>
+		<img id="me" src="img/china.png" alt="chineseflag" width="200" height="100">
+		<ul class="lcc">
+			<li>Collectivistic</li>
+			<li>Unonfrontational</li>
+			<li>Hierarchical responsibility</li>
+			<li>Jing-mei's mother</li>
+		</ul>
+		<hr>
+		<h3>Mother's Drill</h3>
+		<p>What's the capital of Finland?</p>
+		<p id="choice1" onclick="showAnswerT()">>Click here for the answer</p>
+		<p id="choice2" onclick="showAnswerJ()">>Click here for Jing-mei's answer</p>
+	</div>
+</body>
+</html>
